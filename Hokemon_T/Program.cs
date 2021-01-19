@@ -9,7 +9,7 @@ namespace Hokemon_T
             Console.WriteLine("Hello welcome to Hokeworld home of the Hokemon!");
 
             // Instantiation of new Hokemon
-
+/*
             Hokemon hoke01 = new Hokemon();  // INSTANTIATE new Hokemon object referred to as Hoke01
 
             hoke01.get_details();
@@ -27,7 +27,7 @@ namespace Hokemon_T
             hokemonObject.get_details();
             Console.WriteLine("Attack value is: {0}", hokemonObject.attackCalculator());
             Console.WriteLine("Defence value is: {0}", hokemonObject.defenceCalculator());
-
+*/
             Hokemon hoke03 = new Hokemon();  // INSTANTIATE from Hokemon Parent class
 
             Halor hoke04 = new Halor(); // INSTANTIATE from Halor child class
@@ -35,16 +35,13 @@ namespace Hokemon_T
 
 
 
-            /*
-
             Battle_Arena newBattleObject = new Battle_Arena();
 
-            newBattleObject.requestAChallenger(hoke02);  // In newBattleObject passing 
+            newBattleObject.requestAChallenger(hoke03);  // In newBattleObject passing 
                                                          // Hoke02 object as an 
                                                          // Argument
 
-            newBattleObject.theBattle(hoke02, hokemonObject);
-            */
+            newBattleObject.theBattle(hoke03, hoke04);
 
         }
     }
