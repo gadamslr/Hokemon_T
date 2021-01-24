@@ -6,43 +6,44 @@ namespace Hokemon_T
     {
         static void Main(string[] args)
         {
+            // Declaring variables to use in the game
+
+            Hokemon[] ChallengersArray = new Hokemon[3]; // An Array of 3 Hokemon Challengers
+            Battle_Arena newBattleObject = new Battle_Arena(); // Creating the Battle object
+
+            Random rnd = new Random();
+
+            Boolean repeatGame = true; // To ask user if they want another Battle
+            string result;
+
             Console.WriteLine("Hello welcome to Hokeworld home of the Hokemon!");
 
-            // Instantiation of new Hokemon
-/*
-            Hokemon hoke01 = new Hokemon();  // INSTANTIATE new Hokemon object referred to as Hoke01
+            Halor playerHoke = new Halor(); // INSTANTIATE from Halor child class
 
-            hoke01.get_details();
-            Console.WriteLine("Attack value is: {0}", hoke01.attackCalculator());
-            Console.WriteLine("Defence value is: {0}", hoke01.defenceCalculator());
+            while (repeatGame == true) // While ITERATION to continue more BATTLES
+            {
 
-            Hokemon hoke02 = new Hokemon();  // INSTANTIATE Hoke02
+                newBattleObject.requestAChallenger(playerHoke);  // In newBattleObject passing 
+                                                             // Hoke02 object as an 
+                                                             // Argument
 
-            hoke02.get_details();
-            Console.WriteLine("Attack value is: {0}", hoke02.attackCalculator());
-            Console.WriteLine("Defence value is: {0}", hoke02.defenceCalculator());
-            
-            Hokemon hokemonObject = new Hokemon();  // INSTANTIATE hokemonObject
+                for (int i = 0; i < 3; i++)
+                {
+                    ChallengersArray[i] = new Hokemon(); // INSTANTIATING each new Hokemon Challeneger                
+                }
 
-            hokemonObject.get_details();
-            Console.WriteLine("Attack value is: {0}", hokemonObject.attackCalculator());
-            Console.WriteLine("Defence value is: {0}", hokemonObject.defenceCalculator());
-*/
-            Hokemon hoke03 = new Hokemon();  // INSTANTIATE from Hokemon Parent class
+                // Creating the BATTLE       
+                newBattleObject.theBattle(playerHoke, ChallengersArray[rnd.Next(0,ChallengersArray.Length)]);
 
-            Halor hoke04 = new Halor(); // INSTANTIATE from Halor child class
-            Console.WriteLine("I am part of {0} team.", hoke04.team);
+                playerHoke.get_details();
 
-
-
-            Battle_Arena newBattleObject = new Battle_Arena();
-
-            newBattleObject.requestAChallenger(hoke03);  // In newBattleObject passing 
-                                                         // Hoke02 object as an 
-                                                         // Argument
-
-            newBattleObject.theBattle(hoke03, hoke04);
-
+                Console.WriteLine("Do you want another battle? (y/n)");
+                result = Console.ReadLine();
+                if ((result.ToLower())[0] == 'n')
+                {
+                    repeatGame = false;
+                }
+            }
         }
     }
 }

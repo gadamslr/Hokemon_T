@@ -15,10 +15,11 @@ namespace Hokemon_T
         private int attack;
         private int speed;
         private int defense;
+        private int team;
 
         // PROPERTIES
-                // PROPERTIES are a combination of a field and method - this keeps variables / attributes PRIVATE
-                // and allows us to perform checks on what is input
+        // PROPERTIES are a combination of a field and method - this keeps variables / attributes PRIVATE
+        // and allows us to perform checks on what is input
         public string Name         // Notice PROPERTY has no parenthesis its identifier unlike the METHODS below
         {
             get { return name; }
@@ -44,7 +45,7 @@ namespace Hokemon_T
 
         public void get_details()
         {
-            Console.WriteLine("\n\n************\nName: {0}\nHealth: {1}/{2}\nAttack: {3}\nSpeed: {4}\nDefense: {5}\n**********\n", name, health, max_health, attack, speed, defense);
+            Console.WriteLine("\n\n************\nName: {0}\nHealth: {1}/{2}\nAttack: {3}\nSpeed: {4}\nDefense: {5}\nTeam: {6}\n**********\n", name, health, max_health, attack, speed, defense, team);
         }         // get_details METHOD 
 
         public void provide_name()
