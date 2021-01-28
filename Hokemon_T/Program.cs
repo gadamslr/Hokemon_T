@@ -1,5 +1,6 @@
 ﻿using System;
 using Hokemon_T.impl;
+using Hokemon_T.util;
 
 namespace Hokemon_T
 {
@@ -29,7 +30,12 @@ namespace Hokemon_T
             Console.WriteLine("Attack value is: {0}", hokemonObject.attackCalculator());
             Console.WriteLine("Defence value is: {0}", hokemonObject.defenceCalculator());
 */
-            Hokemon hoke03 = new Hokemon();  // INSTANTIATE from Hokemon Parent class
+
+
+            Console.WriteLine("Enter a team for your Hokemon: ");
+            String team = Console.ReadLine();
+            
+            Hokemon hoke03 = new Hokemon(EnumUtil.GetEnumValue<PokeTeam>(team));  // INSTANTIATE from Hokemon Parent class
 
             Hokemon hoke04 = new Hokemon(PokeTeam.Halor); // Same class, but instead gives it a team.
 
