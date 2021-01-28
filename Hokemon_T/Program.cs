@@ -1,4 +1,5 @@
 ﻿using System;
+using Hokemon_T.impl;
 
 namespace Hokemon_T
 {
@@ -30,8 +31,16 @@ namespace Hokemon_T
 */
             Hokemon hoke03 = new Hokemon();  // INSTANTIATE from Hokemon Parent class
 
-            Halor hoke04 = new Halor(); // INSTANTIATE from Halor child class
-            Console.WriteLine("I am part of {0} team.", hoke04.team);
+            Hokemon hoke04 = new Hokemon(PokeTeam.Halor); // Same class, but instead gives it a team.
+
+            if (hoke03.getTeam() != PokeTeam.None) {
+                Console.WriteLine("I am part of team {0}.", hoke03.getTeam());
+            }
+
+            if (hoke04.getTeam() != PokeTeam.None) {
+                Console.WriteLine("I am part of team {0}.", hoke04.getTeam());
+            }
+            
 
 
 
