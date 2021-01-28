@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Hokemon_T.impl;
 
 namespace Hokemon_T
 {
@@ -15,6 +16,7 @@ namespace Hokemon_T
         private int attack;
         private int speed;
         private int defense;
+        private PokeTeam team;
 
         // PROPERTIES
                 // PROPERTIES are a combination of a field and method - this keeps variables / attributes PRIVATE
@@ -39,7 +41,17 @@ namespace Hokemon_T
             attack = random_int_generator(10, 100);
             speed = random_int_generator(10, 100);
             defense = random_int_generator(10, 100);
+            team = PokeTeam.None;
+        }
 
+        public Hokemon(PokeTeam pokeTeam) {
+            provide_name();
+            max_health = 100;
+            health = random_int_generator(10, max_health);
+            attack = random_int_generator(10, 100);
+            speed = random_int_generator(10, 100);
+            defense = random_int_generator(10, 100);
+            team = pokeTeam;
         }
 
         public void get_details()
@@ -51,6 +63,10 @@ namespace Hokemon_T
         {
             Console.WriteLine("Enter a name for your Hokemon: ");
             name = Console.ReadLine();
+        }
+
+        public PokeTeam getTeam() {
+            return team;
         }
 
         public int random_int_generator(int min_value, int max_value) // PARAMETERS int min_value, int max_value
